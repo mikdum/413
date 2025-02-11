@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hedelmäpeli</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="gamefield">
+        <h1>Hedelmäpeli</h1>
+        <div class="sides" >
+
+            <div class="leftside">
+                <div class="leftsidetop">
+
+                    <div id="rahaa"> rahaa: 50€</div>
+                    <div id="pannos"> pannos: 1€</div>
+                    <div class="pannokset">
+                        <dev class="pannos"> 1€</dev>
+                        <dev class="pannos"> 2€</dev>
+                        <dev class="pannos"> 3€</dev>
+                        
+                    </div>
+
+                </div>
+                
+                
+
+            <div class="slots">
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+                <div class="reel"></div>
+            </div>
+            <div class="lukitset">
+                <div class="lukitse" onclick=" btn_lukitse(1)"><p>lukitse</p></div>
+                <div class="lukitse"onclick=" btn_lukitse(2)"><p>lukitse</p></div>
+                <div class="lukitse"onclick=" btn_lukitse(3)"><p>lukitse</p></div>
+                <div class="lukitse"onclick=" btn_lukitse(4)"><p>lukitse</p></div>
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="rightsidecontainer"></div>
+            <div class="elementrow">
+                
+                <div class="rightpicure" style="background-image: url('/images/cherry.png');"></div>
+                   <div class="palkinto">
+                    <p>6€</p>
+                    <div class="kolikko" style="background-image: url('/images/kolikko.png');"></div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+        
+    </div>
+</body>
+
+</html>
