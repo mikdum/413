@@ -178,7 +178,7 @@ h1 {
     display: flex;
     margin: 20%;
     background-color: white;
-    background-image: url('/images/kolikko.png');
+    background-image: url('./images/kolikko.png');
 }
 
 .elementrow {
