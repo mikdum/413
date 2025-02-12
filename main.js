@@ -37,16 +37,16 @@ const roll = (reel, i) => {
 
 function rollAll() {
 
-    let iconMap = [7,
-        "meloni",
-        "cherry",
-        "päärynä",
-        "omena"];
+    // let iconMap = [7,
+    //     "meloni",
+    //     "cherry",
+    //     "päärynä",
+    //     "omena"];
     let reelsList = document.querySelectorAll('.slots .reel');
     Promise.all([...reelsList].map((reel, i) =>
         roll(reel, i))).then((deltas) => {
             deltas.forEach((delta, i) => indexes[i] = (indexes[i] + delta) % numberIcons)
-            indexes.map((index) => { console.log(iconMap[index]) });
+            // indexes.map((index) => { console.log(iconMap[index]) });
             checkwinner();
 
         })
@@ -122,7 +122,6 @@ function checkvalues(value, i = 4) {
 
 function checkwinner() {
 
-    console.log("began: ", indexes);
     document.getElementById('pelaa').disabled = true;
 
     setTimeout(() => {
