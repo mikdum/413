@@ -11,22 +11,30 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
- 
+
 }
-.leftside{
+
+.leftside {
     max-width: 500px;
 }
+
 .slots,
 .lukitset {
     max-width: 450px;
     max-height: 100px;
-    width: 40em; 
-    height: 10em; 
+    width: 40em;
+    height: 10em;
     display: flex;
     justify-content: space-between;
     padding: 1vh 1.2vh;
-    position:relative;
+    position: relative;
 
+}
+
+h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -40,10 +48,10 @@ h1 {
     border: 1px solid black;
     /* width: 100px;
     height: 100px; */
-     /* width: 20%;*/
-    height: 100px; 
-    width: 100px; 
-   
+    /* width: 20%;*/
+    height: 100px;
+    width: 100px;
+
     /* max-width: 100px;
     max-height: 100px; */
 
@@ -62,14 +70,19 @@ h1 {
     border: solid 1px black;
     border-radius: 50%;
     text-align: center;
-            
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+
 }
-.lukitse p{
+
+#winner {
+    display: none;
     /* position: absolute;              
     top: 50%;  */
 }
 
-.pannokset {
+#pannokset {
     display: flex;
     border: solid 1px lightgreen;
     padding: 1%;
@@ -83,11 +96,16 @@ h1 {
     padding: 2%;
     background-color: lightgreen;
     box-sizing: border-box;
-
-    max-width: 200px;
+    width: 85%;
     padding-top: 1%;
     margin-left: auto;
     margin-right: auto;
+}
+
+#pelaa {
+    height: 210px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .pannos {
@@ -101,7 +119,7 @@ h1 {
     background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
-    background-color: lightgray;
+    background-color: rgb(211, 211, 211);
 
 
 }
@@ -113,22 +131,36 @@ h1 {
     margin: 1%;
 
 }
-.palkinto{
+
+.palkinto {
     margin-left: 1%;
     margin-top: 2%;
     background-color: white;
     display: flex;
     width: 4em;
-    height: 4em; 
+    height: 4em;
 
 }
-.rightpicure{
+
+.rightpicure {
     text-align: center;
     align-items: center;
     display: flex;
     width: 320px;
-    height: 80px; 
+    height: 80px;
     background-size: 25%;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+
+}
+
+.rightpicure3 {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    width: 240px;
+    height: 80px;
+    background-size: 33%;
     background-position: 0 0;
     background-repeat: repeat-x;
 
@@ -138,14 +170,15 @@ h1 {
     /* width: 80%;
     height: 80%; */
     background-size: 100%;
-     width: 40px;
-    height: 40px; 
+    width: 40px;
+    height: 40px;
     background-repeat: no-repeat;
     text-align: center;
     align-items: center;
     display: flex;
     margin: 20%;
     background-color: white;
+    background-image: url('/images/kolikko.png');
 }
 
 .elementrow {
@@ -163,8 +196,18 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 
-    @media (max-width: 768px) {
+    @media (max-width: 869px) {
         display: block;
-       
+
     }
+
+    @media (min-width: 870px) {
+        display: flex;
+
+    }
+}
+.lastrow{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -11,52 +11,103 @@
 <body>
     <div class="gamefield">
         <h1>Hedelmäpeli</h1>
-        <div class="sides" >
+        <div class="sides">
 
             <div class="leftside">
-                <div class="leftsidetop">
-
-                    <div id="rahaa"> rahaa: 50€</div>
-                    <div id="pannos"> pannos: 1€</div>
-                    <div class="pannokset">
-                        <dev class="pannos"> 1€</dev>
-                        <dev class="pannos"> 2€</dev>
-                        <dev class="pannos"> 3€</dev>
+                <div class="leftcontainer" style="display: flex;">
+                    
+                    <div class="leftsidetop" >
+                        
+                        <div id="rahaa"> rahaa: 50€</div>
+                        <div id="pannos"> pannos: 1€</div>
+                        <div id="pannokset">
+                            <dev class="pannos" onclick="setPannos(1)"> 1€</dev>
+                            <dev class="pannos" onclick="setPannos(2)"> 2€</dev>
+                            <dev class="pannos" onclick="setPannos(3)"> 3€</dev>
+                            
+                        </div>
+                        <div id="winner">
+                            <h1>WINNER!</h1>
+                        </div>
                         
                     </div>
-
+                    <button id="pelaa" onclick="btn_pelaa()" style="background-color: green;">PELAA</button>
                 </div>
-                
-                
 
-            <div class="slots">
-                <div class="reel"></div>
-                <div class="reel"></div>
-                <div class="reel"></div>
-                <div class="reel"></div>
-            </div>
-            <div class="lukitset">
-                <div class="lukitse" onclick=" btn_lukitse(1)"><p>lukitse</p></div>
-                <div class="lukitse"onclick=" btn_lukitse(2)"><p>lukitse</p></div>
-                <div class="lukitse"onclick=" btn_lukitse(3)"><p>lukitse</p></div>
-                <div class="lukitse"onclick=" btn_lukitse(4)"><p>lukitse</p></div>
-            </div>
-        </div>
-        <div class="rightside">
-            <div class="rightsidecontainer"></div>
-            <div class="elementrow">
-                
-                <div class="rightpicure" style="background-image: url('/images/cherry.png');"></div>
-                   <div class="palkinto">
-                    <p>6€</p>
-                    <div class="kolikko" style="background-image: url('/images/kolikko.png');"></div>
+
+
+                <div class="slots">
+                    <div class="reel"></div>
+                    <div class="reel"></div>
+                    <div class="reel"></div>
+                    <div class="reel"></div>
+                </div>
+                <div class="lukitset">
+                    <div class="lukitse" onclick=" btn_lukitse(0)">
+                        <p>lukitse</p>
+                    </div>
+                    <div class="lukitse" onclick=" btn_lukitse(1)">
+                        <p>lukitse</p>
+                    </div>
+                    <div class="lukitse" onclick=" btn_lukitse(2)">
+                        <p>lukitse</p>
+                    </div>
+                    <div class="lukitse" onclick=" btn_lukitse(3)">
+                        <p>lukitse</p>
+                    </div>
                 </div>
             </div>
-            
-            
+            <div class="rightside">
+                <div class="rightsidecontainer"></div>
+                <div class="elementrow">
+                    <div class="rightpicure" style="background-image: url('/images/omena.png')"></div>
+                    <div class="palkinto">
+                        <p>2€</p>
+                        <div class="kolikko"></div>
+                    </div>
+                </div>
+                <div class="elementrow">
+                    <div class="rightpicure" style="background-image: url('/images/päärynä.png');"></div>
+                    <div class="palkinto">
+                        <p>4€</p>
+                        <div class="kolikko" ></div>
+                    </div>
+                </div>
+                <div class="elementrow">
+                    <div class="rightpicure" style="background-image: url('/images/cherry.png');"></div>
+                    <div class="palkinto">
+                        <p>6€</p>
+                        <div class="kolikko"></div>
+                    </div>
+                </div>
+                <div class="elementrow">
+                    <div class="rightpicure" style="background-image: url('/images/meloni.png');"></div>
+                    <div class="palkinto">
+                        <p>8€</p>
+                        <div class="kolikko"></div>
+                    </div>
+                </div>
+                <div class="elementrow">
+                    <div class="rightpicure" style="background-image: url('/images/7.jpg');"></div>
+                    <div class="palkinto">
+                        <p>10€</p>
+                        <div class="kolikko"></div>
+                    </div>
+                </div>
+                <div class="elementrow">
+                    <div class="lastrow">
+
+                        <div class="rightpicure3" style="background-image: url('/images/7.jpg');"></div>
+                        <div class="palkinto">
+                            <p>5€</p>
+                            <div class="kolikko"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-        
+
     </div>
 </body>
 
