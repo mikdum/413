@@ -6,6 +6,7 @@ const iconWidth = 100,
     timePerSecond = 100;
 let pannos = 1;
 let rahaa = 50;
+let waswinn=true;
 
 const roll = (reel, i) => {
 
@@ -16,19 +17,19 @@ const roll = (reel, i) => {
         normtargetBackgroundPositionY = targetBackgroundPositionY % (numberIcons * iconHeight);
 
     return new Promise((reseolve, reject) => {
-        if (!indexesLukitset[i]){
+        if (!indexesLukitset[i]) {
 
             reel.style.transition = `background-position-y ${8 + delta * timePerSecond}ms`;
             reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
             setTimeout(() => {
                 reel.style.transition = `none`;
                 reel.style.backgroundPositionY = `${normtargetBackgroundPositionY}px`;
-                
+
                 reseolve(delta % numberIcons)
-                
+
             }, 8 + delta * timePerSecond)
         }
-        else {reseolve(((i + 2) * numberIcons)*indexes[i]) % numberIcons}
+        else { reseolve(((i + 2) * numberIcons) * indexes[i]) % numberIcons }
     }
     )
 
@@ -56,18 +57,19 @@ function rollAll() {
 }
 
 
-// window.addEventListener('resize', (e) => {
-//     console.log(window.innerWidth);
-//     if (parseInt(window.innerWidth)<768){
-//         console.log("YES");
-//         var source = document.getElementById('pelaa');
-//         var destination = document.getElementById('leftcontainer');
-//         destination.appendChild(source);
-//     }
-//   });
-
-
 function btn_lukitse(index) {
+if (waswinn){
+    document.getElementById('winner').style.display = "flex";
+    document.getElementById('pannokset').style.display = "none";
+    document.getElementById('winner').innerHTML ="<h2>You can't lock right now, wait next turn</h2>";
+    setTimeout(() => {
+        document.getElementById('pannokset').style.display = "flex";
+        document.getElementById('winner').style.display = "none";
+
+    }, 3000);
+    return;
+}
+
     indexesLukitset[index] = !indexesLukitset[index];
     let lukitset = document.querySelectorAll('.lukitse');
     if (indexesLukitset[index]) {
@@ -96,6 +98,7 @@ function setPannos(value) {
 }
 
 function btn_pelaa() {
+    waswinn=false;
     if (rahaa <= 0) {
         document.getElementById('winner').innerHTML = "<h2>You can't play the game without money</h2>"
         document.getElementById('winner').style.display = "flex";
@@ -158,6 +161,11 @@ function checkwinner() {
     if (lahja > 0) {
         document.getElementById('winner').innerHTML = `<h2>You win ${lahja}€</h2>`;
         rahaa += lahja;
+        for (var i = 0; i < indexesLukitset.length; i++) {
+            if (indexesLukitset[i]) { btn_lukitse(i) };
+        }
+        waswinn=true;
+
     }
     else {
         rahaa -= pannos;
